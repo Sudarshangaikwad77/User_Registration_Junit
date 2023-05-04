@@ -23,4 +23,11 @@ public class UserTest
        Assertions.assertTrue(result);
    }
 
+    @Test
+    public void checking_Last(){
+        UserRegistration lastName = new UserRegistration();
+        boolean result = lastName.getLastName("Gaikwad");
+        Assertions.assertTrue(result);
+    }
+
 }

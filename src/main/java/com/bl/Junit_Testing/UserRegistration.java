@@ -16,5 +16,16 @@ public class UserRegistration
 
             return result;
         }
+
+    public boolean getLastName(String last) {
+
+        String lastRegex = "[A-Z]{1}+[a-z]{3,}";
+        Pattern patternobj1 = Pattern.compile(lastRegex);
+
+        Matcher matcher1 = patternobj1.matcher(last);
+        boolean result = matcher1.matches();
+
+        return result;
+    }
     }
 
