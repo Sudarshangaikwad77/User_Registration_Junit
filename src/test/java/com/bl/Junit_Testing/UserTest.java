@@ -45,5 +45,10 @@ public class UserTest
         boolean result = test.getPasswd("sudarshangaik");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void checkingPassword1(){
+        boolean result = test.getPasswd("Passw0rd!");
+        Assertions.assertFalse(result);
+    }
 
 }
