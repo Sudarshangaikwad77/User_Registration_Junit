@@ -40,5 +40,10 @@ public class UserTest
         boolean result = test.getMobile("91 8308622248");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void checkingPassword(){
+        boolean result = test.getPasswd("sudarshangaik");
+        Assertions.assertTrue(result);
+    }
 
 }

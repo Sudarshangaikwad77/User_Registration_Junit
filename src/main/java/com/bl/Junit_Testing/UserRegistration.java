@@ -45,5 +45,14 @@ public class UserRegistration
 
         return result;
     }
+    public boolean getPasswd(String Passwd){
+        String password = "^[a-z]{8,}$";
+        Pattern pass= Pattern.compile(password);
+
+        Matcher matcher = pass.matcher(Passwd);
+        boolean result = matcher.matches();
+
+        return result;
+    }
 }
 
