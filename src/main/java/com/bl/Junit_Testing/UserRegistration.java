@@ -27,5 +27,14 @@ public class UserRegistration
 
         return result;
     }
+    public boolean getEmail(String Email){
+        String email = "^[a-z]+([.][a-z]+)*@[a-z]+.[a-z]{2,3}([.][a-z]{2,3})*$";
+        Pattern patobj = Pattern.compile(email);
+
+        Matcher match2 = patobj.matcher(Email);
+        boolean result = match2.matches();
+
+        return result;
     }
+}
 

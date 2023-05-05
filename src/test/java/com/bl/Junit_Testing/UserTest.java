@@ -5,13 +5,14 @@ public class UserTest
    UserRegistration test = new UserRegistration();
 
    @BeforeAll
-    static void beforAll()
+    static void
+   beforeAll()
    {
-       System.out.println("runningg befor all method");
+       System.out.println("running before all method");
    }
    @BeforeEach
-     void beforEach(){
-       System.out.println("running beforEach method ");
+     void beforeEach(){
+       System.out.println("running beforeEach method ");
    }
    @AfterAll
         static   void afterAll(){
@@ -25,8 +26,13 @@ public class UserTest
 
     @Test
     public void checking_Last(){
-        UserRegistration lastName = new UserRegistration();
-        boolean result = lastName.getLastName("Gaikwad");
+
+        boolean result = test.getLastName("Gaikwad");;
+        Assertions.assertTrue(result);
+    }
+    @Test
+    public void checkingEmail(){
+        boolean result = test.getEmail("xyz.abc@bl.co.in");
         Assertions.assertTrue(result);
     }
 
