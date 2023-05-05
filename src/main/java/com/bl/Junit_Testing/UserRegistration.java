@@ -36,5 +36,14 @@ public class UserRegistration
 
         return result;
     }
+    public boolean getMobile(String Number){
+        String mobile = "^[0-9]{2,3} +[0-9]{10}";
+        Pattern mob_num = Pattern.compile(mobile);
+
+        Matcher match3 = mob_num.matcher(Number);
+        boolean result = match3.matches();
+
+        return result;
+    }
 }
 

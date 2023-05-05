@@ -35,5 +35,10 @@ public class UserTest
         boolean result = test.getEmail("xyz.abc@bl.co.in");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void checkingNumber(){
+        boolean result = test.getMobile("91 8308622248");
+        Assertions.assertTrue(result);
+    }
 
 }
