@@ -3,20 +3,21 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
-    //Adding in UC-1
+
+
     public boolean getFirstName(String first) {
 
         String firstRegex = "^[A-Z]{1}+[a-z]{3,}";
-        Pattern patternobj = Pattern.compile(firstRegex);
+        Pattern patternobj1 = Pattern.compile(firstRegex);
 
-        Matcher matchobj = patternobj.matcher(first);
+        Matcher matchobj = patternobj1.matcher(first);
 
         boolean result = matchobj.matches();
 
         return result;
     }
 
-    public boolean getLastName(String last) {
+    public boolean getLastName(String last){
 
         String lastRegex = "[A-Z]{1}+[a-z]{3,}";
         Pattern patternobj1 = Pattern.compile(lastRegex);
@@ -27,7 +28,7 @@ public class UserRegistration {
         return result;
     }
 
-    public boolean getEmail(String Email) {
+    public boolean getEmail(String Email){
         String email = "^[a-z]+([.][a-z]+)*@[a-z]+.[a-z]{2,3}([.][a-z]{2,3})*$";
         Pattern patobj = Pattern.compile(email);
 
@@ -37,54 +38,24 @@ public class UserRegistration {
         return result;
     }
 
-    public boolean getMobile(String Number) {
+    public boolean getMobile(String Number){
         String mobile = "^[0-9]{2,3} +[0-9]{10}";
-        Pattern mob_num = Pattern.compile(mobile);
+        Pattern patobj2 = Pattern.compile(mobile);
 
-        Matcher match3 = mob_num.matcher(Number);
+        Matcher match3 = patobj2.matcher(Number);
         boolean result = match3.matches();
 
         return result;
     }
 
-    public boolean getPasswd(String Passwd) {
-        String password = "^[a-z]{8,}$";
-        Pattern pass = Pattern.compile(password);
-
-        Matcher matcher = pass.matcher(Passwd);
-        boolean result = matcher.matches();
-
-        return result;
-    }
-
-    public boolean getPasswd1(String Passwd) {
-        String password = "^(?=.*[A-Z])(?=.*[a-z][0-9]).{8,}$";
-        Pattern pass1 = Pattern.compile(password);
-
-        Matcher matcher = pass1.matcher(Passwd);
-        boolean result = matcher.matches();
-
-        return result;
-    }
-
-    public boolean getPasswd2(String Passwd) {
-        String password = "^(?=.*[A-Z])(?=.*[a-z][0-9]).{8,}$";
-        Pattern pass2 = Pattern.compile(password);
-
-        Matcher matcher = pass2.matcher(Passwd);
-        boolean result = matcher.matches();
-
-        return result;
-    }
-    public boolean getPasswd3(String Passwd){
+    public boolean getPasswd(String Passwd){
         String password = "^(?=.*[A-Z])(?=.*[a-z][0-9])(?=.*[@#$%^&+=!]).{8,}$";
-        Pattern pass3 = Pattern.compile(password);
+        Pattern patobj3 = Pattern.compile(password);
 
-        Matcher matcher = pass3.matcher(Passwd);
+        Matcher matcher = patobj3.matcher(Passwd);
         boolean result = matcher.matches();
 
         return result;
     }
-
 }
 
