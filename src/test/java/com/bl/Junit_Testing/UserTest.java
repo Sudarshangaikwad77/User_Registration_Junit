@@ -4,7 +4,7 @@ public class UserTest
 {
    UserRegistration firstName = new UserRegistration();
 
-   @BeforeAll
+    @BeforeAll
     static void beforeall(){
         System.out.println("Running Test Cases");
     }
@@ -21,38 +21,44 @@ public class UserTest
     }
 
     @Test
-    public void  checking_First(){
+    public void  checking_First() throws InvalidUserException{
         boolean result = firstName.getFirstName("Sudarshan");
-        Assertions.assertTrue(result);
+        if (!result){
+            throw new InvalidUserException("Invalid FirstName");
+        }
     }
 
     @Test
-    public void checking_Last(){
-     UserRegistration lastName = new UserRegistration();
+    public void checking_Last() throws InvalidUserException{
+       UserRegistration lastName = new UserRegistration();
         boolean result = lastName.getLastName("Gaikwad");
-        Assertions.assertTrue(result);
+        if (!result){
+            throw new InvalidUserException("Invalid Lastname!");
+        }
     }
 
 
     @Test
-    public  void  checking_Email(){
-        UserRegistration email = new UserRegistration();
+    public  void  checking_Email() throws  InvalidUserException {
+       UserRegistration email = new UserRegistration();
         boolean result = email.getEmail("abc.xyz@bl.co.in");
-        Assertions.assertTrue(result);
+        if (!result) throw new InvalidUserException("Invalid Email");
     }
 
     @Test
-    public void checking_PhoneNum(){
+    public void checking_PhoneNum() throws InvalidUserException {
         UserRegistration mobile = new UserRegistration();
-        boolean result = mobile.getMobile("91 9308622248");
+        boolean result = mobile.getMobile("91 9865678765");
         Assertions.assertTrue(result);
     }
 
     @Test
-    public void checking_Password(){
+    public void checking_Password() throws InvalidUserException{
         UserRegistration passwd = new UserRegistration();
         boolean result = passwd.getPasswd("Sudarshan123@");
-        Assertions.assertTrue(result);
+        if (!result){
+            throw new InvalidUserException("Invalid Password");
+        }
     }
 
 
