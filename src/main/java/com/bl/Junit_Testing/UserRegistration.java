@@ -4,13 +4,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
 
-
     public boolean getFirstName(String first) {
 
         String firstRegex = "^[A-Z]{1}+[a-z]{3,}";
-        Pattern patternobj1 = Pattern.compile(firstRegex);
+        Pattern patternobj = Pattern.compile(firstRegex);
 
-        Matcher matchobj = patternobj1.matcher(first);
+        Matcher matchobj = patternobj.matcher(first);
 
         boolean result = matchobj.matches();
 
